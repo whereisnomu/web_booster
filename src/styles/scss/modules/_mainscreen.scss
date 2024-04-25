@@ -1,0 +1,586 @@
+@use "../variables.scss" as *;
+
+#mainscreen {
+  padding: 100px 50px 0 60px;
+  display: flex;
+  background: #07086c;
+  justify-content: space-between;
+  position: relative;
+  // padding-bottom: 210px;
+
+  gap: 30px;
+
+  .mask {
+    position: absolute;
+    z-index: 1;
+    top: -70px;
+    left: 0;
+    width: 100%;
+  }
+
+  .left {
+    // max-width: 670px;
+    z-index: 2;
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 70px;
+      color: $w;
+      line-height: 100%;
+      margin-bottom: 5px;
+
+      span {
+        position: relative;
+        z-index: 2;
+        color: #969af7;
+        font-size: 55px;
+
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   display: block;
+        //   width: 635px;
+        //   height: 70px;
+        //   background-color: #3572c1;
+        //   z-index: -1;
+        //   border-radius: 20px;
+        //   transform: rotate(-1deg);
+        //   left: -5px;
+        //   top: -8px;
+        // }
+      }
+    }
+
+    .description {
+      h4 {
+        margin-bottom: 40px;
+      }
+    }
+    h4 {
+      font-weight: 400;
+      font-size: 20px;
+      max-width: 675px;
+      color: #969af7;
+      margin-bottom: 20px;
+    }
+
+    .points {
+      background: rgba(150, 154, 247);
+      background: linear-gradient(
+        90deg,
+        rgba(150, 154, 247, 0.3) 0%,
+        rgba(26, 19, 143, 0) 100%
+      );
+
+      padding: 30px 30px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .point {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        h5 {
+          font-size: 22px;
+          font-weight: 400;
+          color: $w;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      .button {
+        max-width: 315px;
+      }
+    }
+  }
+
+  .right {
+    z-index: 2;
+    position: relative;
+
+    // call-to-action.scss
+    $primary-color: #552693; // example primary color
+    $secondary-color: #ffa500; // example secondary color
+
+    form {
+      max-width: 380px !important;
+    }
+
+    .cta {
+      // padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+
+      gap: unset;
+
+      .billet {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
+
+        h2 {
+          font-size: 23px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        background: $primary-color;
+      }
+
+      h2 {
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .union {
+        width: 100%;
+        max-width: 300px;
+        padding: 30px 0;
+
+        .form-group {
+          font-size: 18px;
+
+          label {
+            font-size: 18px;
+            font-weight: 700;
+            padding-left: 20px;
+            display: block;
+            color: #626366;
+            margin-bottom: 5px;
+          }
+
+          input[type="text"],
+          input[type="tel"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 5px;
+
+            background-color: #f5f3ff;
+            border: 1px solid #07086c2e;
+            box-sizing: border-box;
+            font-size: 20px;
+
+            &::placeholder {
+              color: #bcbfc4;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        background: $secondary-color;
+        border: none;
+        padding: 20px 10px;
+        border-radius: 10px;
+        color: $w;
+        max-width: 300px;
+        font-size: 18px;
+        font-weight: 400;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+          background: darken($secondary-color, 5%);
+        }
+        margin-bottom: 5px;
+      }
+
+      .privacy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 0;
+
+        h4 {
+          color: #c0c0c0;
+          font-size: 14px;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
+
+    .img,
+    .svg {
+      object-fit: fill;
+      width: 100%;
+    }
+
+    .img {
+      position: relative;
+      z-index: 1;
+      transform: translateY(4px);
+    }
+
+    .svg {
+      position: absolute;
+      z-index: 0;
+      bottom: -30px;
+      right: -50px;
+    }
+  }
+
+  @media (max-width: $sxga) {
+    padding-top: 70px;
+
+    .left {
+      // max-width: 550px;
+      h1 {
+        font-size: 55px;
+
+        span {
+          font-size: 50px;
+
+          // &::before {
+          //   width: 550px;
+          //   height: 65px;
+          // }
+        }
+      }
+
+      .points {
+        .point {
+          h5 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $lscreen) {
+    gap: 10px;
+
+    .left {
+      h1 {
+        font-size: 48px;
+
+        span {
+          font-size: 40px;
+        }
+      }
+
+      .description {
+        h4 {
+          max-width: 600px;
+        }
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+
+      .points {
+        padding: 20px;
+
+        .point {
+          h5 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .right {
+      form {
+        max-width: 320px !important;
+      }
+
+      .cta {
+        .billet {
+          h2 {
+            font-size: 20px;
+          }
+        }
+
+        .union {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .form-group {
+            input[type="text"],
+            input[type="tel"] {
+              max-width: 240px;
+            }
+          }
+        }
+
+        button {
+          max-width: 240px;
+        }
+
+        .privacy {
+          h4 {
+            max-width: 215px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $notebooks) {
+    padding: 30px 25px 0 30px;
+
+    .left {
+      h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+
+        span {
+          line-height: 35px;
+          font-size: 30px;
+        }
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      .description {
+        h4 {
+          max-width: 380px;
+        }
+      }
+
+      .points {
+        margin-bottom: 20px;
+
+        gap: 10px;
+
+        .point {
+          h5 {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .buttons {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .right {
+      display: flex;
+
+      .cta {
+        .billet {
+          h2 {
+            font-size: 18px;
+          }
+        }
+
+        .union {
+          padding: 20px 0;
+
+          .form-group {
+            label {
+              font-size: 16px;
+            }
+
+            input[type="text"],
+            input[type="tel"] {
+              font-size: 16px;
+              padding: 15px;
+
+              &::placeholder {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        button {
+          max-width: 218px;
+          font-size: 16px;
+        }
+
+        .privacy {
+          flex-direction: column;
+        }
+      }
+
+      .img {
+        transform: translateY(-1px);
+      }
+      .svg {
+        right: -25px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 30px 0 30px;
+
+    .left {
+      h1 {
+        font-size: 35px;
+        margin-bottom: 10px;
+
+        span {
+          font-size: 30px;
+        }
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      .points {
+        margin-bottom: 20px;
+
+        gap: 10px;
+      }
+
+      .buttons {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .right {
+      display: flex;
+      width: 100%;
+      max-width: 508px;
+
+      .cta {
+        .billet {
+          width: 100%;
+        }
+
+        .union {
+          max-width: unset;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .form-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            label {
+              display: flex;
+            }
+            input[type="text"],
+            input[type="tel"] {
+              max-width: 300px;
+              width: 100%;
+            }
+          }
+        }
+
+        button {
+          max-width: 300px;
+        }
+      }
+
+      form {
+        max-width: unset !important;
+        width: 100%;
+      }
+
+      .img {
+        transform: translateY(-1px);
+      }
+      .svg {
+        right: -30px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px 10px 0 10px;
+
+    .left {
+      h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+
+        span {
+          line-height: 30px;
+
+          &::before {
+            width: 260px;
+            height: 65px;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      .points {
+        margin-bottom: 20px;
+
+        gap: 10px;
+      }
+
+      .buttons {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .right {
+      display: flex;
+
+      .cta {
+        .union {
+          .form-group {
+            input[type="text"],
+            input[type="tel"] {
+              max-width: 280px;
+              width: 100%;
+            }
+          }
+        }
+
+        button {
+          max-width: 280px;
+        }
+      }
+
+      .img {
+        transform: translateY(-1px);
+      }
+      .svg {
+        right: -10px;
+      }
+    }
+  }
+}
